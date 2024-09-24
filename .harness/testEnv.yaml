@@ -1,0 +1,6 @@
+environment:
+  name: testEnv
+  identifier: testEnv
+  orgIdentifier: default
+  projectIdentifier: test
+  type: PreProduction
