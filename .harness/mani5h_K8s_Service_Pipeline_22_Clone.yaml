@@ -11,7 +11,7 @@ pipeline:
         spec:
           deploymentType: Kubernetes
           service:
-            serviceRef: k8s_service_2
+            serviceRef: mani5h_k8s_service_2_Clone
             serviceInputs:
               serviceDefinition:
                 type: Kubernetes
@@ -20,6 +20,7 @@ pipeline:
                     primary:
                       primaryArtifactRef: <+input>
                       sources: <+input>
+            gitBranch: master
           environment:
             environmentRef: env
             deployToAll: false
