@@ -1,0 +1,38 @@
+---
+service:
+  tags: {}
+  serviceDefinition:
+    spec:
+      manifests:
+      - manifest:
+          identifier: "manifest"
+          type: "K8sManifest"
+          spec:
+            store:
+              type: "Github"
+              spec:
+                connectorRef: "Naman_Test_connector"
+                gitFetchType: "Branch"
+                paths:
+                - "k8s/manifests/k8s/basicManifests/templates"
+                branch: "master"
+            valuesPaths:
+            - "k8s/manifests/k8s/basicManifests/values.yaml"
+            skipResourceVersioning: false
+            enableDeclarativeRollback: false
+      artifacts:
+        primary:
+          primaryArtifactRef: "<+input>"
+          sources:
+          - spec:
+              connectorRef: "Naman_Docker_Connector"
+              imagePath: "harness/todolist-sample"
+              tag: "<+pipeline.variables.tag>"
+              digest: ""
+            identifier: "artifact"
+            type: "DockerRegistry"
+    type: "Kubernetes"
+  orgIdentifier: "Ng_Pipelines_K8s_Organisations"
+  projectIdentifier: "DoNotDelete_NamanTest"
+  identifier: "mani5h_k8s_service_2_Clone"
+  name: "mani5h - k8s service 2 - Clone"
