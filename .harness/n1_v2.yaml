@@ -10,9 +10,8 @@ template:
       deploymentType: Kubernetes
       gitOpsEnabled: true
       environment:
-        environmentRef: <+input>
+        environmentRef: CDS95531
         deployToAll: <+input>
-        environmentInputs: <+input>
         gitOpsClusters: <+input>
       service:
         serviceRef: <+input>
