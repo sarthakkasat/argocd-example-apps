@@ -1,3 +1,6 @@
 service:
   name: s1
   identifier: s1
+  serviceDefinition:
+    spec: {}
+    type: Kubernetes
